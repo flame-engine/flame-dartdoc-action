@@ -7,5 +7,6 @@ branding:
   icon: code
 
 runs:
-  using: 'bash'
-  main: scripts/dartdoc.sh
+  using: 'composite'
+    - run: ${{ github.action_path }}/scripts/dartdoc.sh
+      shell: bash
