@@ -8,6 +8,6 @@ branding:
 
 runs:
   using: 'composite'
-
   steps:
-    run: ./scripts/dartdoc.sh
+    - run: ./scripts/dartdoc.sh
+      shell: bash
