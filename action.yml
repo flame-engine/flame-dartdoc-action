@@ -7,7 +7,5 @@ branding:
   icon: code
 
 runs:
-  using: 'composite'
-  steps:
-    - run: ./scripts/dartdoc.sh
-      shell: bash
+  using: 'bash'
+  main: scripts/dartdoc.sh
