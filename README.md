@@ -13,5 +13,5 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
-      - uses: flame-engine/flame-dartdoc-action@main
+      - uses: flame-engine/flame-dartdoc-action@v1
 ```
