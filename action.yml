@@ -5,9 +5,12 @@ author: 'flame-engine'
 branding:
   color: red
   icon: code
-
+inputs:
+  package-path:
+    description: 'The path where this action should be executed. If none is set, searches for packages inside the repo.'
+    required: false
 runs:
   using: 'composite'
   steps:
-    - run: ${{ github.action_path }}/scripts/dartdoc.sh
+    - run: ${{ github.action_path }}/scripts/dartdoc.sh ${{ inputs.package-path }}
       shell: bash

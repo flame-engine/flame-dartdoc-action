@@ -13,7 +13,15 @@ function run_dartdoc() {
 
 echo "Starting Flame Dartdoc"
 echo "----------------------"
-for file in $(find ./packages -maxdepth 2 -type f -name "pubspec.yaml"); do
+
+# Prefer using packages from input
+PACKAGES=$1
+if [ -z $PACKAGES ]; then
+  # Searches for packages if none is set
+  PACKAGES=$(find ./packages -maxdepth 2 -type f -name "pubspec.yaml")
+fi
+
+for file in $PACKAGES; do
   dir=$(dirname $file)
   cd $dir
   echo "Generating dartdoc $dir"
